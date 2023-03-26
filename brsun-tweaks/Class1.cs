@@ -61,7 +61,7 @@ namespace brsun_tweaks
         [HarmonyPrefix]
         public static bool resFix()
         {
-            Screen.SetResolution(Display.main.renderingWidth, Display.main.renderingHeight, true);
+            Screen.SetResolution(Display.main.systemWidth, Display.main.systemHeight, true);
             return false;
         }
     }
