@@ -4,10 +4,11 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine;
 using BR.General;
+using BR.UI;
 
 namespace brsun_tweaks
 {
-    [BepInPlugin("mod.spectre.brsuntweaks", "BRSun Tweaks", "1.0")]
+    [BepInPlugin("mod.spectre.brsuntweaks", "BRSun Tweaks", "1.2")]
     public class tweaks : BaseUnityPlugin
     {
         private void Awake()
@@ -18,13 +19,30 @@ namespace brsun_tweaks
 
         private void Update()
         {
-            //Set main camera FoV
-            GameObject cam = GameObject.Find("CameraPosition/Main Camera");
-            if (cam)
+            //Framerate 60 Fix
+            Parameter.TargetFrameRateType = Parameter.FrameRateType.FPS60;
+
+            //FOV
+            if (Input.GetKey(KeyCode.UpArrow))
             {
-                cam.GetComponent<Camera>().fieldOfView = 40f;
+                fov = fov - 0.5f;
             }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                fov = fov + 0.5f;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                fov = 20;
+            }
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                fov = 40;
+            }
+            Camera.main.fieldOfView = fov;
         }
+
+        private float fov = 40;
     }
 
 
