@@ -8,7 +8,7 @@ using BR.UI;
 
 namespace brsun_tweaks
 {
-    [BepInPlugin("mod.spectre.brsuntweaks", "BRSun Tweaks", "1.2")]
+    [BepInPlugin("mod.spectre.brsuntweaks", "BRSun Tweaks", "1.03")]
     public class tweaks : BaseUnityPlugin
     {
         private void Awake()
@@ -39,7 +39,11 @@ namespace brsun_tweaks
             {
                 fov = 40;
             }
-            Camera.main.fieldOfView = fov;
+            GameObject cam = GameObject.Find("CameraPosition/Main Camera");
+            if (cam)
+            {
+                cam.GetComponent<Camera>().fieldOfView = fov;
+            }
         }
 
         private float fov = 40;
