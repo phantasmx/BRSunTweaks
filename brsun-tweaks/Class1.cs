@@ -35,7 +35,22 @@ namespace brsun_tweaks
             Parameter.TargetFrameRateType = Parameter.FrameRateType.FPS60;
 
             //Fullscreen
-            if (Screen.fullScreen == false)
+            if (UnityEngine.Input.GetKeyUp(UnityEngine.KeyCode.F11))
+            {
+                forceFullScreen = !forceFullScreen;
+                Screen.fullScreen = forceFullScreen;
+                if (!forceFullScreen)
+                {
+                    Screen.SetResolution(Display.main.systemWidth - 80, Display.main.systemHeight - 120, false);
+                    Screen.fullScreen = false;
+                }
+                else
+                {
+                    Screen.SetResolution(Display.main.systemWidth, Display.main.systemHeight, true);
+                    Screen.fullScreen = true;
+                }
+            }
+            if (forceFullScreen && !Screen.fullScreen)
             {
                 Screen.SetResolution(Display.main.systemWidth, Display.main.systemHeight, true);
                 Screen.fullScreen = true;
@@ -80,6 +95,7 @@ namespace brsun_tweaks
             }
         }
         private static float fov = 40;
+        private static bool forceFullScreen = true;
     }
 
 
