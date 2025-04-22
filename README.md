@@ -14,5 +14,5 @@ Current tweaks:
   - Arrow Right for increased zoom (fov 40).
 
 Installing:
-- Install Bepinex 5 x64 https://github.com/BepInEx/BepInEx/releases/download/v5.4.21/BepInEx_x64_5.4.21.0.zip
-- Copy brsun-tweaks.dll to BepInEx/plugins folder (create plugins folder if not exists).
+- Install the patch from https://github.com/kokomif/BRSUN-EN-Patch-Project
+- Copy brsun-tweaks.dll to BepInEx/plugins folder.
