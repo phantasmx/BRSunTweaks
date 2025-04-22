@@ -14,7 +14,7 @@ using BepInEx.Unity.IL2CPP;
 
 namespace brsun_tweaks
 {
-    [BepInPlugin("mod.spectre.brsuntweaks", "BRSun Tweaks", "1.04")]
+    [BepInPlugin("mod.spectre.brsuntweaks", "BRSun Tweaks", "1.05")]
     public class tweaks : BasePlugin
     {
         public override void Load()
