@@ -6,7 +6,7 @@ Current tweaks:
 - Makes game to always run in fullscreen with display's current resolution without reverting to default screen size (4k resolution works too).
 - F11 to toggle fullscreen.
 - Sets FPS to 60.
-- Removes depth of field effect at any graphics quality for better clarity.
+- Removes depth of field effect at any graphics quality for better clarity (F10 to toggle).
 - Increases field of view from default 20 to 40 for better view on home screen.
 - Zoom for main camera:
   - Arrow Up to zoom in.
